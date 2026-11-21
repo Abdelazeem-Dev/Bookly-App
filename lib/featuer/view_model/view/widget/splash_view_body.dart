@@ -1,12 +1,25 @@
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
-class SplashViewBody extends StatelessWidget {
+class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
 
   @override
+  State<SplashViewBody> createState() => _SplashViewBodyState();
+}
+
+class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProviderStateMixin {
+  late AnimationController animationController;
+  late Animation slideAnimation;
+  @override
+  void setState(VoidCallback fn)  {
+    
+    super.setState(fn);
+  }
+  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return   Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -17,9 +30,8 @@ class SplashViewBody extends StatelessWidget {
             'Read Free Books',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-          ),
-        ],
-      ),
+          ).animate().fade().slide(begin: Offset(0, 5), end: Offset(0, 0), duration: 1.seconds)
+      ,])
     );
   }
 }

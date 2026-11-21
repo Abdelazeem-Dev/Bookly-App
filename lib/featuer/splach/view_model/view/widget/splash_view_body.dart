@@ -1,0 +1,53 @@
+import 'package:bookly_app/core/utils/assets.dart';
+import 'package:bookly_app/featuer/home/data/presentation/view/home_view.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+class SplashViewBody extends StatefulWidget {
+  const SplashViewBody({super.key});
+
+  @override
+  State<SplashViewBody> createState() => _SplashViewBodyState();
+}
+
+class _SplashViewBodyState extends State<SplashViewBody> {
+  @override
+  initState() {
+    super.initState();
+    navigatorToHome();
+  }
+
+  void navigatorToHome() {
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.to(()=> const HomeView(),transition: Transition.fade, duration: Duration(milliseconds: 500)) ;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Image(image: AssetImage(AssetsData.kLogo)),
+          SizedBox(height: 4),
+          Text(
+                'Read Free Books',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              )
+              .animate()
+              .fade(delay: Duration(seconds: 1))
+              .slide(
+                begin: Offset(0, 5),
+                end: Offset(0, 0),
+                duration: Duration(seconds: 1),
+              ),
+        ],
+      ),
+    );
+  }
+}

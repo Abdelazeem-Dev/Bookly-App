@@ -1,5 +1,5 @@
 import 'package:bookly_app/constsnt.dart';
-import 'package:bookly_app/featuer/view_model/view/splash_view.dart';
+import 'package:bookly_app/featuer/splach/view_model/view/splash_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {

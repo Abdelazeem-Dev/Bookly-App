@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CustomListView extends StatelessWidget {
-  const CustomListView({super.key});
+class CustomListViewItem extends StatelessWidget {
+  const CustomListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.23,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: AspectRatio(
         aspectRatio: 2.8 / 4,
         child: Container(

@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CustomListViewItem extends StatelessWidget {
+  
+
   const CustomListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      padding: const EdgeInsets.only( left: 8.0),
       child: AspectRatio(
         aspectRatio: 2.8 / 4,
         child: Container(

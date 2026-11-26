@@ -10,22 +10,42 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CustomAppBar(),
-            FeatureListViewBuilder(),
-            const SizedBox(height: 20),
-            Text('Best Seller', style: Styles.textStyle18),
-            const SizedBox(height: 20),
-            BestsellerListViewItem(),
-          ],
-        ),
+       body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomAppBar(),
+                FeatureListViewBuilder(),
+                const SizedBox(height: 20),
+                Text('Best Seller', style: Styles.textStyle18),
+              ],
+            ),
+          ),
+          const SliverFillRemaining(
+            child: BestSallerListView(),
+          ),
+        ],
       ),
     );
   }
 }
 
- 
+class BestSallerListView extends StatelessWidget {
+  const BestSallerListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      padding: const EdgeInsets.all(0),
+      physics: const NeverScrollableScrollPhysics(),
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.symmetric( vertical: 8.0),
+          child: const BestsellerListViewItem(),
+        );
+      },
+    );
+  }
+}

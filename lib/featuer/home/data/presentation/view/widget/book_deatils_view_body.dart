@@ -1,7 +1,11 @@
+import 'package:bookly_app/constsnt.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/featuer/home/data/presentation/view/widget/book_rating.dart';
 import 'package:flutter/material.dart';
 
- import 'custom_appbar_book_details_view.dart';
+import '../../../../../../core/widget/custom_button.dart';
+import 'book_button.dart';
+import 'custom_appbar_book_details_view.dart';
 import 'custom_book_image.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -16,17 +20,35 @@ class BookDetailsViewBody extends StatelessWidget {
           CustomAppBarBookDetailsView(),
           Padding(
             padding: EdgeInsets.symmetric(
-              vertical: MediaQuery.of(context).size.height * 0.02,
-              horizontal: MediaQuery.of(context).size.width * 0.17,
+              vertical: MediaQuery
+                  .of(context)
+                  .size
+                  .height * 0.02,
+              horizontal: MediaQuery
+                  .of(context)
+                  .size
+                  .width * 0.17,
             ),
             child: CustomBookImage(),
           ),
-          Text('Harry Potter and the Goblet of Fire',style:Styles.textStyle16.copyWith(fontSize:19 ),),
-          Text('J.K. Rowling',style:Styles.textStyle18,),
+          Text(
+            'Harry Potter and the Goblet of Fire',
+            style: Styles.textStyle16.copyWith(
+                fontSize: 20, fontFamily: kFontFamily),
+          ),
+          const SizedBox(height: 2,),
+          Opacity(opacity: 0.5,
+              child: Text('J.K. Rowling', style: Styles.textStyle18)),
+          const SizedBox(height: 6),
+          BookRating(
+            mainAxisAlignment: MainAxisAlignment.center,
+          ),
           const SizedBox(height: 20),
 
+          BookButton()
         ],
       ),
     );
   }
 }
+

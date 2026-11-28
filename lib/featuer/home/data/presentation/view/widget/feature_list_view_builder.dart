@@ -2,13 +2,14 @@ import 'package:bookly_app/featuer/home/data/presentation/view/widget/custom_boo
 import 'package:flutter/material.dart';
 
 class FeatureListViewBuilder extends StatelessWidget {
-  const FeatureListViewBuilder({super.key});
+  const FeatureListViewBuilder({super.key  });
 
-  @override
+   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.23,
-      child: ListView.builder(
+       child: ListView.builder(
+        padding: EdgeInsets.zero,
         scrollDirection: Axis.horizontal,
         itemCount:10,
         itemBuilder: (context, index) {

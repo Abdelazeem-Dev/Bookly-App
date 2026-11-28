@@ -1,6 +1,4 @@
-import 'package:bookly_app/core/utils/app_routers.dart';
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+ import 'package:flutter/material.dart';
 
 class CustomBookImage extends StatelessWidget {
   const CustomBookImage({super.key});
